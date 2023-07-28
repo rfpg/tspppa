@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Over Buttons</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .button {
+            margin: 10px;
+            padding: 15px 30px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button class="button" onclick="window.location.href='module1.html'">Module 1</button>
+        <button class="button" onclick="window.location.href='module2.html'">Module 2</button>
+        <button class="button" onclick="window.location.href='module3.html'">Module 3</button>
+        <button class="button" onclick="window.location.href='module4.html'">Module 4</button>
+        <button class="button" onclick="window.location.href='module5.html'">Module 5</button>
+        <button class="button" onclick="window.location.href='module6.html'">Module 6</button>
+        <button class="button" onclick="window.location.href='module7.html'">Module 7</button>
+    </div>
+</body>
+</html>
