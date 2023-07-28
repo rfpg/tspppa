@@ -1,0 +1,358 @@
+<head>
+  <title>Module 7: Slope-Intercept Form</title>
+<style>
+  p, li, ul, ol *
+{
+   font-size: 1em !important;
+   font-weight: normal !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+
+h2, h3, h4 *
+{
+   font-size: 1em !important;
+   font-weight: bold !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+</style>
+
+<script type="text/javascript">
+  function changeText(text) {
+    var display = document.getElementById('text-display');
+    display.innerHTML = "";
+    display.innerHTML = text;
+  }
+
+  function changeback(text) {
+    var display = document.getElementById('text-display');
+    display.innerHTML = "";
+    display.innerHTML = text;
+  }
+  var one_clicks = -1;
+  var one_math_expression;
+
+  function exampleOneOnClick() {
+    if (one_clicks <= 0) {
+      one_clicks = 0;
+    }
+    one_clicks = (one_clicks + 1) % 5;
+    switch (parseInt(one_clicks)) {
+     case 0:
+        one_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        one_math_expression = "Step 1: Slope (m) = the rate of change of y divided by the rate of change of x = 3.";
+        break;
+      case 2:
+        one_math_expression = "Step 2: The rate of change of x = 1 - (-3) = 4.";
+        break;
+      case 3:
+        one_math_expression = "Step 3: The rate of change of y = 7 - (-5) = 12.";
+        break;
+      case 4:
+        one_math_expression = "Result: Thus, 12 / 4 = 3. The slope of the line is 3 or m = 3.";
+        break;
+    }
+    document.getElementById("example_one").innerHTML = one_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleOnePrevClick() {
+    if (one_clicks <= 0) {
+      one_clicks = 1;
+    }
+    one_clicks = (one_clicks - 1) % 5;
+    switch (parseInt(one_clicks)) {
+     case 0:
+        one_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        one_math_expression = "Step 1: Slope (m) = the rate of change of y divided by the rate of change of x = 3.";
+        break;
+      case 2:
+        one_math_expression = "Step 2: The rate of change of x = 1 - (-3) = 4.";
+        break;
+      case 3:
+        one_math_expression = "Step 3: The rate of change of y = 7 - (-5) = 12.";
+        break;
+      case 4:
+        one_math_expression = "Result: Thus, 12 / 4 = 3. The slope of the line is 3 or m = 3.";
+        break;
+    }
+    document.getElementById("example_one").innerHTML = one_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  var two_clicks = -1;
+  var two_math_expression;
+
+  function exampleTwoOnClick() {
+    two_clicks = (two_clicks + 1) % 7;
+    switch (parseInt(two_clicks)) {
+      case 0:
+        two_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        two_math_expression = "Step 1: Recall that the slope (m) is given by the formula: m = (change in y) / (change in x): m = (y2 - y1) / (x2 - x1) = (8 - 1) / (2 - (-3)) = 7 / 5.";
+        break;
+      case 2:
+        two_math_expression = "Step 2: Choose one of the given points (x, y) to find the y-intercept (b). Let's use the point (2, 8) to find the y-intercept (b).";
+        break;
+      case 3:
+        two_math_expression = "Step 3: Write the equation in slope-intercept form using the found slope (m) and the y-intercept (b). y = (7/5)x + b.";
+        break;
+      case 4:
+        two_math_expression = "Step 4: Now, we need to find the value of b. Since the line passes through the point (2, 8), we can substitute these values into the equation to find b. ";
+        break;
+      case 5:
+        two_math_expression = "Step 5: Solve for b using 8 = 14/5 + b. To get b alone, subtract 14/5 from both sides. b = 8 - 14/5. Multiply both 8 and 14 by 5. b = (40 - 14) / 5. b = 26 / 5.";
+        break;
+      case 6:
+        two_math_expression = "Step 6: The result is y = (7/5)x + 26/5. Check using Desmos. Plot the line and the intercepts and see if they match up!";
+        break;
+    }
+    document.getElementById("example_two").innerHTML = two_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleTwoPrevClick() {
+    if (two_clicks <= 0) {
+      two_clicks = 1;
+    }
+    two_clicks = (two_clicks - 1) % 7;
+    switch (parseInt(two_clicks)) {
+      case 0:
+        two_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        two_math_expression = "Step 1: Recall that the slope (m) is given by the formula: m = (change in y) / (change in x): m = (y2 - y1) / (x2 - x1) = (8 - 1) / (2 - (-3)) = 7 / 5.";
+        break;
+      case 2:
+        two_math_expression = "Step 2: Choose one of the given points (x, y) to find the y-intercept (b). Let's use the point (2, 8) to find the y-intercept (b).";
+        break;
+      case 3:
+        two_math_expression = "Step 3: Write the equation in slope-intercept form using the found slope (m) and the y-intercept (b). y = (7/5)x + b.";
+        break;
+      case 4:
+        two_math_expression = "Step 4: Now, we need to find the value of b. Since the line passes through the point (2, 8), we can substitute these values into the equation to find b. ";
+        break;
+      case 5:
+        two_math_expression = "Step 5: Solve for b using 8 = 14/5 + b. To get b alone, subtract 14/5 from both sides. b = 8 - 14/5. Multiply both 8 and 14 by 5. b = (40 - 14) / 5. b = 26 / 5.";
+        break;
+      case 6:
+        two_math_expression = "Step 6: The result is y = (7/5)x + 26/5. Check using Desmos. Plot the line and the intercepts and see if they match up!";
+        break;
+    }
+    document.getElementById("example_two").innerHTML = two_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  
+  
+  var three_clicks = -1;
+  var three_math_expression;
+
+  function exampleThreeOnClick() {
+    three_clicks = (three_clicks + 1) % 4;
+    switch (parseInt(three_clicks)) {
+      case 0:
+        three_math_expression = "Cycle through operational steps.";
+        break;
+      case 1:
+        three_math_expression = "Step 1: Identify the slope (m) and y-intercept (b) from the given information. In this problem, the flat fee of $30 represents the y-intercept (b) because it is the cost when x (the number of days) is 0. The additional charge of $15 per day represents the slope (m) because it increases the cost by $15 for each additional day.";
+        break;
+      case 2:
+        three_math_expression = "Step 2: Write the equation in slope-intercept form (y = mx + b). The equation will be: y = 15x + 30.";
+        break;
+      case 3:
+        three_math_expression = "Result: the correct answer is y = 15x + 30.";
+        break;
+    }
+    document.getElementById("example_three").innerHTML = three_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleThreePrevClick() {
+    if (three_clicks <= 0) {
+      three_clicks = 1;
+    }
+    three_clicks = (three_clicks - 1) % 4;
+    switch (parseInt(three_clicks)) {
+      case 0:
+        three_math_expression = "Cycle through operational steps.";
+        break;
+      case 1:
+        three_math_expression = "Step 1: Identify the slope (m) and y-intercept (b) from the given information. In this problem, the flat fee of $30 represents the y-intercept (b) because it is the cost when x (the number of days) is 0. The additional charge of $15 per day represents the slope (m) because it increases the cost by $15 for each additional day.";
+        break;
+      case 2:
+        three_math_expression = "Step 2: Write the equation in slope-intercept form (y = mx + b). The equation will be: y = 15x + 30.";
+        break;
+      case 3:
+        three_math_expression = "Result: the correct answer is y = 15x + 30.";
+        break;
+  }
+    document.getElementById("example_three").innerHTML = three_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+    
+  var four_clicks = -1;
+  var four_math_expression;
+
+  function exampleFourOnClick() {
+    four_clicks = (four_clicks + 1) % 5;
+    switch (parseInt(four_clicks)) {
+      case 0:
+        four_math_expression = "Cycle through operational steps.";
+        break;
+      case 1:
+        four_math_expression = "Step 1: Determine the y-intercept (b). The y-intercept is the point where the line crosses the y-axis. By observing the graph, we can see that the y-intercept is at y = 4.";
+        break;
+      case 2:
+        four_math_expression = "Step 2: Determine the slope (m). To find the slope, we can use any two points on the line. Let's use the points (0, 4) (the y-intercept) and (2, 0) (another point on the line). The slope (m) is given by: m = (change in y) / (change in x) = (0 - 4) / (2 - 0) = -4 / 2 = -2.";
+        break;
+      case 3:
+        four_math_expression = "Step 3: Write the equation in slope-intercept form (y = mx + b). Now that we have the y-intercept (b) as 4 and the slope (m) as -2, we can write the equation: y = -2x + 4.";
+        break;
+      case 4:
+        four_math_expression = "Result: the correct answer is a) Slope (m) = -2, y-intercept (b) = 4. Equation: y = -2x + 4.";
+        break;
+    }
+    document.getElementById("example_four").innerHTML = four_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+    function exampleFourPrevClick() {
+    if (four_clicks <= 0) {
+      four_clicks = 1;
+    }
+    four_clicks = (four_clicks - 1) % 5;
+    switch (parseInt(four_clicks)) {
+    case 0:
+        four_math_expression = "Cycle through operational steps.";
+        break;
+      case 1:
+        four_math_expression = "Step 1: Determine the y-intercept (b). The y-intercept is the point where the line crosses the y-axis. By observing the graph, we can see that the y-intercept is at y = 4.";
+        break;
+      case 2:
+        four_math_expression = "Step 2: Determine the slope (m). To find the slope, we can use any two points on the line. Let's use the points (0, 4) (the y-intercept) and (2, 0) (another point on the line). The slope (m) is given by: m = (change in y) / (change in x) = (0 - 4) / (2 - 0) = -4 / 2 = -2.";
+        break;
+      case 3:
+        four_math_expression = "Step 3: Write the equation in slope-intercept form (y = mx + b). Now that we have the y-intercept (b) as 4 and the slope (m) as -2, we can write the equation: y = -2x + 4.";
+        break;
+      case 4:
+        four_math_expression = "Result: the correct answer is a) Slope (m) = -2, y-intercept (b) = 4. Equation: y = -2x + 4.";
+        break;
+    }
+    document.getElementById("example_four").innerHTML = four_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+
+
+</script>
+<!-- --  JavaScript End ---->
+</head>
+<p>Let's explore slope-intercept form through four examples:
+
+<p>The following interactive examples will help you step through how to find an equation and write it in slope-intercept form. 
+  <a href="https://www.mathsisfun.com/equation_of_line.html" target="_blank" rel="noopener">
+    <strong>You can review the basics and more examples via this free resource.</strong>
+  </a>
+</p>
+    <BR>
+<h2>
+  <strong>Example 1: Given the equation of a line in slope-intercept form, y = 3x + 4, what is the slope of the line, and what does it represent in the context of the problem?
+  <ul>
+      <li>We know from the prior module that in the form y = mx + b, m represents the slope or rate of change of y with respect to x.</li>
+      <li>So, in this case, we can assume that the rate of change between y and x, in this case, would be m, which in this case would be 3.</li> 
+      <li>For this example, let's use a graph to help determine the slope!</li>
+  </ul>
+  <BR>
+  <iframe src="https://www.desmos.com/calculator/hdf3qiovi6?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+  <BR>
+  <BR>
+  <strong>Let's step through this by selecting two points from the graph (-3, -5) (1, 7).</strong>
+   <ul>
+      <li>Recall that m = y2 - y1 / x2 - x1 (which is also tangent of the angle of the formed triangle!).</li>
+      <li>You can click the button below to reveal the steps to find the x-intercept</li>
+  </ul>
+  <BR>
+    <img src="https://blackboard.gwu.edu/bbcswebdav/xid-116123719_2" alt="This is an image of the line y = 3x + 4 with three points selected that will form a triangle in order to graphically determine the line's slope (m)." width="50%" height="auto" style="vertical-align:middle; margin:0px 0px">
+        <BR>
+  <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_one"></p>
+  <p style="padding-left: 40px;">
+    <button type="button" onclick="exampleOnePrevClick()">Prev step </button>
+    <button type="button" onclick="exampleOneOnClick()">Next step</button>
+  </p>
+    <ul>
+      <li>Step 1: Slope (m) = the rate of change of y divided by the rate of change of x = 3.</li>
+      <li>Step 2: The rate of change of x = 1 - (-3) = 4.</li>
+      <li>Step 3: The rate of change of y = 7 - (-5) = 12.</li>
+      <li>Result: Thus, 12 / 4 = 3. The slope of the line is 3 or m = 3.</li>
+    </ul>
+  <BR>
+    <BR>
+      <strong>Example 2: Let's now solve a fractional example from a given set of two points.</strong>
+  <ul>
+          <li>Find the equation of a line that passes through the points (-3, 1) and (2, 8).</li>
+     </ul>
+  <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_two"></p>
+      <p style="padding-left: 40px;">
+        <button type="button" onclick="exampleTwoPrevClick()">Prev step </button>
+        <button type="button" onclick="exampleTwoOnClick()">Next step</button>
+      </p>
+      <h3>
+        <strong>Solution:</strong>
+        <ul>
+          <li>Step 1: Recall that the slope (m) is given by the formula: m = (change in y) / (change in x)
+m = (y2 - y1) / (x2 - x1) = (8 - 1) / (2 - (-3)) = 7 / 5.</li>
+          <li>Step 2: Choose one of the given points (x, y) to find the y-intercept (b). Let's use the point (2, 8) to find the y-intercept (b). </li>
+          <li>Step 3: Write the equation in slope-intercept form using the found slope (m) and the y-intercept (b). y = (7/5)x + b. </li>
+         <li>Step 4: Now, we need to find the value of "b". Since the line passes through the point (2, 8), we can substitute these values into the equation to find "b". </li>       
+<li>Step 5: Solve for "b" using 8 = 14/5 + b. To get "b" alone, subtract 14/5 from both sides:
+<ul>
+  <li>b = 8 - 14/5. Multiply both 8 and 14 by 5.</li>
+  <li>b = (40 - 14) / 5</li>
+  <li>b = 26 / 5</li>
+</ul>
+</ul>
+  <p>The result is y = (7/5)x + 26/5. Let's check using Desmos. Plot the line and the intercepts and see if they match up!</p>
+          <BR>
+  <iframe src="https://www.desmos.com/calculator/muu9ygysmo?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+  <BR>
+  <BR>
+          <strong>Example 3: Let's examine where slope-intercept may be applicable in the real world with the following application problem.</strong>
+<p>A car rental agency charges a flat fee of $30 for renting a car, and an additional $15 per day. Write the equation in slope-intercept form that represents the total cost (y) of renting a car for x days.</p>
+    <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_three"></p>
+              <p style="padding-left: 40px;">
+                <button type="button" onclick="exampleThreePrevClick()">Prev step </button>
+                <button type="button" onclick="exampleThreeOnClick()">Next step</button>
+  </p>   
+   <strong>Solution:</strong>
+            <ul>
+              <li>Step 1: Identify the slope (m) and y-intercept (b) from the given information.
+In this problem, the flat fee of $30 represents the y-intercept (b) because it is the cost when "x" (the number of days) is 0. The additional charge of $15 per day represents the slope (m) because it increases the cost by $15 for each additional day.</li>
+              <li>Step 2: Write the equation in slope-intercept form (y = mx + b).
+The equation will be: y = 15x + 30.</li>
+              <li>Result: the correct answer is y = 15x + 30.</li>
+            </ul>
+            <BR>
+  <BR>
+              <strong>Example 4: Let's examine one more application problem before taking our final quiz!</strong>
+  <p>Question 2: Consider the graph of a line shown below. Determine the slope (m) and the y-intercept (b) of the line, and write its equation in slope-intercept form (y = mx + b).</p>
+  <BR>
+  <iframe src="https://www.desmos.com/calculator/dyjzwirvuz?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+  <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_four"></p>
+              <p style="padding-left: 40px;">
+                <button type="button" onclick="exampleFourPrevClick()">Prev step </button>
+                <button type="button" onclick="exampleFourOnClick()">Next step</button>
+              </p>
+              <h2>
+                <strong>Solution:</strong>
+                <ul>
+                  <li>Step 1: Determine the y-intercept (b). The y-intercept is the point where the line crosses the y-axis. By observing the graph, we can see that the y-intercept is at y = 4.</li>
+                  <li>Step 2: Determine the slope (m). To find the slope, we can use any two points on the line. Let's use the points (0, 4) (the y-intercept) and (2, 0) (another point on the line). The slope (m) is given by: m = (change in y) / (change in x) = (0 - 4) / (2 - 0) = -4 / 2 = -2. </li>
+                  <li>Step 3: Write the equation in slope-intercept form (y = mx + b). Now that we have the y-intercept (b) as 4 and the slope (m) as -2, we can write the equation: y = -2x + 4.</li>
+                  <li>Result: the correct answer is a) Slope (m) = -2, y-intercept (b) = 4; Equation: y = -2x + 4.</li>
+                </ul>
+  <BR>

@@ -1,0 +1,355 @@
+<head>
+  <title>Module 1: Interactive Examples - PEMDAS</title>
+<style>
+  p, li, ul, ol *
+{
+   font-size: 1em !important;
+   font-weight: normal !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+
+h2, h3, h4 *
+{
+   font-size: 1em !important;
+   font-weight: bold !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+</style>
+
+
+<script type="text/javascript">
+        function changeText(text)
+        {
+            var display = document.getElementById('text-display');
+            display.innerHTML = "";
+            display.innerHTML = text;
+        }
+        
+        function changeback(text)
+        {
+            var display = document.getElementById('text-display');
+            display.innerHTML = "";
+            display.innerHTML = text;
+        }
+        
+		
+        var one_clicks = -1;
+        var one_math_expression;
+
+        function exampleOneOnClick() 
+        {
+          if(one_clicks <= 0) {
+          	 one_clicks = 0;
+          }
+          one_clicks = (one_clicks + 1) % 4;
+          
+          switch (parseInt(one_clicks)) {
+          case 0:
+            one_math_expression = "Click to cycle through operational steps for 4 + 3 * 2.";
+            break;
+          case 1:
+            one_math_expression = "Step 1: First, we consider the precedent operator (multiplication): 4 + 3 * 2";
+            break;
+          case 2:
+            one_math_expression = "Step 2: So, we get: 4 + 6.";
+            break;
+          case 3:
+          	one_math_expression = "Result: 4 + 6 = 10 is our result.";    	
+          }
+        	document.getElementById("example_one").innerHTML = one_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }
+        
+        function exampleOnePrevClick() 
+        {
+          if(one_clicks <= 0) {
+          	 one_clicks = 1;
+          }
+          one_clicks = (one_clicks - 1) % 4;
+          
+          switch (parseInt(one_clicks)) {
+          case 0:
+            one_math_expression = "Click to cycle through operational steps for 4 + 3 * 2.";
+            break;
+          case 1:
+            one_math_expression = "Step 1: First, we consider the precedent operator (multiplication): 4 + 3 * 2";
+            break;
+          case 2:
+            one_math_expression = "Step 2: So, we get: 4 + 6.";
+            break;
+          case 3:
+          	one_math_expression = "Result: 4 + 6 = 10 is our result.";    	
+          }
+        	document.getElementById("example_one").innerHTML = one_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }
+        
+        
+         var two_clicks = -1;
+       	 var two_math_expression;
+        
+        function exampleTwoOnClick() 
+        {
+          two_clicks = (two_clicks + 1) % 4;
+          
+          switch (parseInt(two_clicks)) {
+          case 0:
+            two_math_expression = "Cycle through operational steps for 12 / (6 - 3) + 2.";
+            break;
+          case 1:
+            two_math_expression = "Step 1: First, we start with what's inside the parentheses: 6 - 3 = 3.";
+            break;
+          case 2:
+            two_math_expression = "Step 2: Next, we divide 12 by 3 to give 4.";
+            break;
+          case 3:
+          	two_math_expression = "Step 3: Lastly, we add 2 to give us our result, which is 6.";    	
+          }
+        	document.getElementById("example_two").innerHTML = two_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }
+
+       function exampleTwoPrevClick() 
+        {
+          if(two_clicks <= 0) {
+          	 two_clicks = 1;
+          }
+          two_clicks = (two_clicks - 1) % 4;
+          
+          switch (parseInt(two_clicks)) {
+          case 0:
+            two_math_expression = "Click to cycle through operational steps for 4 + 3 * 2.";
+            break;
+          case 1:
+            two_math_expression = "Step 1: First, we consider the precedent operator (multiplication): 4 + 3 * 2";
+            break;
+          case 2:
+            two_math_expression = "Step 2: So, we get: 4 + 6.";
+            break;
+          case 3:
+          	two_math_expression = "Result: 4 + 6 = 10 is our result.";    	
+          }
+        	document.getElementById("example_two").innerHTML = two_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }
+        
+        
+         var three_clicks = -1;
+       	 var three_math_expression;
+        
+        function exampleThreeOnClick() 
+        {
+          three_clicks = (three_clicks + 1) % 5;
+          
+          switch (parseInt(three_clicks)) {
+          case 0:
+            three_math_expression = "Cycle through operational steps for 5 + 2 * 3^2 - (8 - 2 * 4).";
+            break;
+          case 1:
+            three_math_expression = "Step 1: First, we evaluate the exponent: 3^2 = 3 * 3 = 9.";
+            break;
+          case 2:
+            three_math_expression = "Step 2: Then, we calculate the multiplication inside the parentheses: 2 * 4 = 8.";
+            break;
+          case 3:
+          	three_math_expression = "Step 3: Then, the subtraction within the parentheses: 8 - 8 = 0."; 
+            break;
+          case 4:
+          	three_math_expression = "Step 4: Lastly, the addition and subtraction in order: 5 + (2 * 9) - 0 = 5 + 18 - 0 = 23."; 
+          }
+        	document.getElementById("example_three").innerHTML = three_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }
+
+        function exampleThreePrevClick() 
+        {
+          if(three_clicks <= 0) {
+          	 three_clicks = 1;
+          }
+          three_clicks = (three_clicks - 1) % 4;
+          
+          switch (parseInt(three_clicks)) {
+          case 0:
+            three_math_expression = "Click to cycle through operational steps for 4 + 3 * 2.";
+            break;
+          case 1:
+            three_math_expression = "Step 1: First, we consider the precedent operator (multiplication): 4 + 3 * 2";
+            break;
+          case 2:
+            three_math_expression = "Step 2: So, we get: 4 + 6.";
+            break;
+          case 3:
+          	three_math_expression = "Result: 4 + 6 = 10 is our result.";    	
+          }
+        	document.getElementById("example_three").innerHTML = three_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }
+        
+         var four_clicks = -1;
+       	 var four_math_expression;
+        
+         function exampleFourOnClick() 
+        {
+          four_clicks = (four_clicks + 1) % 5;
+          
+          switch (parseInt(four_clicks)) {
+          case 0:
+            four_math_expression = "Cycle through operational steps for 3 * (4 + 2) - 5.";
+            break;
+          case 1:
+            four_math_expression = "Step 1: First, we apply the order of operations: 4 + 2 = 6.";
+            break;
+          case 2:
+            four_math_expression = "Step 2: Then, we multiply 3 * 6 = 18.";
+            break;
+          case 3:
+          	four_math_expression = "Step 3: Then, we subtract 5: 18 - 5 = 13"; 
+            break;
+          case 4:
+          	four_math_expression = "Our solution: The area of the rectangle is 13 square units"; 
+          }
+        	document.getElementById("example_four").innerHTML = four_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+
+        }
+
+        function exampleFourPrevClick() 
+        {
+          if(four_clicks <= 0) {
+          	 four_clicks = 1;
+          }
+          four_clicks = (four_clicks - 1) % 4;
+          
+          switch (parseInt(four_clicks)) {
+          case 0:
+            four_math_expression = "Click to cycle through operational steps for 4 + 3 * 2.";
+            break;
+          case 1:
+            four_math_expression = "Step 1: First, we consider the precedent operator (multiplication): 4 + 3 * 2";
+            break;
+          case 2:
+            four_math_expression = "Step 2: So, we get: 4 + 6.";
+            break;
+          case 3:
+          	four_math_expression = "Result: 4 + 6 = 10 is our result.";    	
+          }
+        	document.getElementById("example_four").innerHTML = four_math_expression;
+        	//document.getElementById("clicks").innerHTML = clicks
+        }  
+</script>
+<!-- --  JavaScript End ---->
+</head>
+
+<p>Proceed through the following interactive examples by reading and following the instructive text. Remember to start with parentheses, followed by exponents, multiplication, division, addition, and subtraction. Then, once you're done, complete the quiz for this lesson to gauge your developing knowledge.</p>
+<h3>
+	<strong>PEMDAS - Levels of Precedence</strong>
+<ol>
+	<li>Parentheses first.</li>
+	<li>Then Exponents.</li>
+	<li>Then multiplication (and division).</li>
+	<li>Then addition.</li>
+	<li>Then subtraction.</li>
+</ol>
+<BR>
+	<h2>
+		<strong>Example 1: Let's start with a simple application of PEMDAS</strong>
+	<ul>
+		<li>Evaluate the expression. You should start with the term that takes 
+					
+					
+			<a href="https://mathworld.wolfram.com/Precedence.html" target="_blank" rel="noopener">
+				<strong>precedence</strong>
+			</a>, which in this case would be multiplication since there are no parentheses in place.
+
+					
+					
+			<ul>
+				<li>You can click on the button below to reveal the next step and an explanation of the chosen operation.</li>
+			</ul>
+		</li>
+	</ul>
+	<p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_one"></p>
+	<p style="padding-left: 40px;">
+		<button type="button" onclick="exampleOnePrevClick()">Prev step </button>
+		<button type="button" onclick="exampleOneOnClick()">Next step</button>
+	</p>
+	<ul>
+		<h3>
+			<strong>Solution:</strong>
+	</ul>
+	<ul>
+		<li>Step 1: Multiplication should be performed before addition.</li>
+		<li>Step 2: Thus, we have: 4 + (3 * 2) = 4 + 6 = 10.</li>
+	</ul>
+	<BR>
+		<h2>
+			<strong>Example 2: Now, let's apply the principles we've just read about to simplify an expression</strong>
+		<ul>
+			<li>Simplify 12 &divide; (6 - 3) + 2.
+
+						
+						
+				<ul>
+					<li>You can click on the button below to reveal the next step and an explanation of the chosen operation.</li>
+				</ul>
+			</li>
+		</ul>
+		<p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_two"></p>
+		<p style="padding-left: 40px;">
+			<button type="button" onclick="exampleTwoPrevClick()">Prev step </button>
+			<button type="button" onclick="exampleTwoOnClick()">Next step</button>
+		</p>
+			<h3>
+				<strong>Solution:</strong>
+			<ul>
+				<li>Step 1: We start by evaluating the expression inside the parentheses: 6 - 3 = 3.</li>
+				<li>Step 2: Then, we proceed with the division: 12 &divide; 3 = 4.</li>
+				<li>Step 3: Finally, we add the result to 2: 4 + 2 = 6.</li>
+			</ul>
+			<BR>
+				<h2>
+					<strong>Example 3: Let's move on to the simplification of more complex expressions</strong>
+				<ul>
+					<li>Simplify 5 + 2 &times; 3&sup2; - (8 - 2 &times; 4).</li>
+				<ul>	<li>You can click on the button below to reveal the next step and an explanation of the chosen operation.</li>
+				</ul></ul>
+				<p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_three"></p>
+				<p style="padding-left: 40px;">
+					<button type="button" onclick="exampleThreePrevClick()">Prev step </button>
+					<button type="button" onclick="exampleThreeOnClick()">Next step</button>
+				</p>
+				<h3>
+					<strong>Solution:</strong>
+				<ul>
+					<li>Step 1: First, we evaluate the exponent: 3&sup2; = 3 &times; 3 = 9.</li>
+					<li>Step 2: Then, we calculate the multiplication inside the parentheses: 2 &times; 4 = 8.</li>
+					<li>Step 3: After that, we perform the subtraction within the parentheses: 8 - 8 = 0.</li>
+					<li>Step 4: Finally, we carry out the addition and subtraction in order: 5 + (2 &times; 9) - 0 = 5 + 18 - 0 = 23.</li>
+				</ul>
+				<BR>
+					<h2>
+						<strong>Example 4: Finally, let's solve a problem using the Order of Operations</strong>
+					<ul>
+						<li>The area of a rectangle is given by the expression 3 &times; (4 + 2) - 5. You are charged with finding the area.</li>
+					</ul>
+					<p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_four"></p>
+					<p style="padding-left: 40px;">
+						<button type="button" onclick="exampleFourPrevClick()">Prev step </button>
+						<button type="button" onclick="exampleFourOnClick()">Next step</button>
+					</p>
+					<h2>
+						<strong>Solution:</strong>
+
+					<ul>
+						<li>Step 1: We apply the order of operations: 4 + 2 = 6.</li>
+						<li>Step 2: Then, we multiply 3 &times; 6 = 18.</li>
+						<li>Step 3: Finally, we subtract 5: 18 - 5 = 13.</li>
+					</ul>
+					<ul>
+						<li>
+							<strong>Answer: </strong>The area of the rectangle is 13 square units.
+										
+								
+						</ul>

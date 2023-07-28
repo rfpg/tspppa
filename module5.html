@@ -1,0 +1,406 @@
+<head>
+  <title>Module 5: Solving Systems of Equations</title>
+<style>
+  p, li, ul, ol *
+{
+   font-size: 1em !important;
+   font-weight: normal !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+
+h2, h3, h4 *
+{
+   font-size: 1em !important;
+   font-weight: bold !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+</style>
+
+<script type="text/javascript">
+  function changeText(text) {
+    var display = document.getElementById('text-display');
+    display.innerHTML = "";
+    display.innerHTML = text;
+  }
+
+  function changeback(text) {
+    var display = document.getElementById('text-display');
+    display.innerHTML = "";
+    display.innerHTML = text;
+  }
+  var one_clicks = -1;
+  var one_math_expression;
+
+  function exampleOneOnClick() {
+    if (one_clicks <= 0) {
+      one_clicks = 0;
+    }
+    one_clicks = (one_clicks + 1) % 7;
+    switch (parseInt(one_clicks)) {
+     case 0:
+        one_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        one_math_expression = "Step 1: Subtract 7 from both sides to give 2y - 7 = x.";
+        break;
+      case 2:
+        one_math_expression = "Step 2: We can move - 7 to the other side to give us 2y = y - 4 + 7.";
+        break;
+      case 3:
+        one_math_expression = "Step 3: We can move y from the right to the left side to give 2y - y  = -4 + 7.";
+        break;
+      case 4:
+        one_math_expression = "Step 4: We can simplify further to solve for y: y = -4 + 7, which yields y = 3.";
+        break;
+      case 5:
+        one_math_expression = "Step 5: Now that we have solved y (3), substitute y in the first equation to give x = 2(3) - 7.";
+        break;
+      case 6:
+        one_math_expression = "Result: y = 3, x = -1.";
+        break;
+    }
+    document.getElementById("example_one").innerHTML = one_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleOnePrevClick() {
+    if (one_clicks <= 0) {
+      one_clicks = 1;
+    }
+    one_clicks = (one_clicks - 1) % 7;
+    switch (parseInt(one_clicks)) {
+      case 0:
+        one_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        one_math_expression = "Step 1: Subtract 7 from both sides to give 2y - 7 = x.";
+        break;
+      case 2:
+        one_math_expression = "Step 2: We can move - 7 to the other side to give us 2y = y - 4 + 7.";
+        break;
+      case 3:
+        one_math_expression = "Step 3: We can move y from the right to the left side to give 2y - y  = -4 + 7.";
+        break;
+      case 4:
+        one_math_expression = "Step 4: We can simplify further to solve for y: y = -4 + 7, which yields y = 3.";
+        break;
+      case 5:
+        one_math_expression = "Step 5: Now that we have solved y (3), substitute y in the first equation to give x = 2(3) - 7.";
+        break;
+      case 6:
+        one_math_expression = "Result: y = 3, x = -1.";
+        break;
+    }
+    document.getElementById("example_one").innerHTML = one_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  var two_clicks = -1;
+  var two_math_expression;
+
+  function exampleTwoOnClick() {
+    two_clicks = (two_clicks + 1) % 6;
+    switch (parseInt(two_clicks)) {
+      case 0:
+        two_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        two_math_expression = "Step 1: Plug the first equation into y of the second to get 4x - 17.5 + 2x = 6.5.";
+        break;
+      case 2:
+        two_math_expression = "Step 2: Add 17.5 to both sides to get 6x = 24.";
+        break;
+      case 3:
+        two_math_expression = "Step 3: Divide both sides by 6 to get x = 4.";
+        break;
+      case 4:
+        two_math_expression = "Step 4: Plug x into y of either equation and solve for y. We get 4(4) - 17.5.";
+        break;
+      case 5:
+        two_math_expression = "Step 5:  We get y = 16 - 16.5. x - 4 and y = -0.5 or (4, -0.5).";
+        break;
+    }
+    document.getElementById("example_two").innerHTML = two_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleTwoPrevClick() {
+    if (two_clicks <= 0) {
+      two_clicks = 1;
+    }
+    two_clicks = (two_clicks - 1) % 6;
+    switch (parseInt(two_clicks)) {
+       case 0:
+        two_math_expression = "Click to cycle through the steps.";
+        break;
+      case 1:
+        two_math_expression = "Step 1: Plug the first equation into y of the second to get 4x - 17.5 + 2x = 6.5.";
+        break;
+      case 2:
+        two_math_expression = "Step 2: Add 17.5 to both sides to get 6x = 24.";
+        break;
+      case 3:
+        two_math_expression = "Step 3: Divide both sides by 6 to get x = 4.";
+        break;
+      case 4:
+        two_math_expression = "Step 4: Plug x into y of either equation and solve for y. We get 4(4) - 17.5.";
+        break;
+      case 5:
+        two_math_expression = "Step 5:  We get y = 16 - 16.5. x - 4 and y = -0.5 or (4, -0.5).";
+        break;
+    }
+    document.getElementById("example_two").innerHTML = two_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  
+  var three_clicks = -1;
+  var three_math_expression;
+
+  function exampleThreeOnClick() {
+    three_clicks = (three_clicks + 1) % 6;
+    switch (parseInt(three_clicks)) {
+      case 0:
+        three_math_expression = "Cycle through operational steps.";
+        break;
+      case 1:
+        three_math_expression = "Step 1: Add 3x and 5x.";
+        break;
+      case 2:
+        three_math_expression = "Step 2: Then, add -4y to 4y and add the float terms on the right.";
+        break;
+      case 3:
+        three_math_expression = "Step 3: Simplify to get x = 28/8 or 3.5";
+        break;
+      case 4:
+        three_math_expression = "Step 4: Then, plug x into the first equation to get y. 4y = 2.5 - 10.5.";
+        break;
+      case 5:
+        three_math_expression = "Step 5: x = 3.5, y = -2. Graph it to check your work.";
+        break;
+    }
+    document.getElementById("example_three").innerHTML = three_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleThreePrevClick() {
+    if (three_clicks <= 0) {
+      three_clicks = 1;
+    }
+    three_clicks = (three_clicks - 1) % 6;
+    switch (parseInt(three_clicks)) {
+      case 0:
+        three_math_expression = "Cycle through operational steps.";
+        break;
+      case 1:
+        three_math_expression = "Step 1: Add 3x and 5x.";
+        break;
+      case 2:
+        three_math_expression = "Step 2: Then, add -4y to 4y and add the float terms on the right.";
+        break;
+      case 3:
+        three_math_expression = "Step 3: Simplify to get x = 28/8 or 3.5";
+        break;
+      case 4:
+        three_math_expression = "Step 4: Then, plug x into the first equation to get y. 4y = 2.5 - 10.5. We get 3x = 2.84 - 1.4.";
+        break;
+      case 5:
+        three_math_expression = "Step 5: x = 3.5, y = -2. Graph it to check your work.";
+        break;
+    }
+    document.getElementById("example_three").innerHTML = three_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+    
+  var four_clicks = -1;
+  var four_math_expression;
+
+  function exampleFourOnClick() {
+    four_clicks = (four_clicks + 1) % 5;
+    switch (parseInt(four_clicks)) {
+      case 0:
+        four_math_expression = "Step 1: Subtract 3x and 3x to cancel x.";
+        break;
+      case 1:
+        four_math_expression = "Step 2: Subtract 4y and y to get 3y and subtract 2.84 and 1.79 to get 1.05";
+        break;
+      case 2:
+        four_math_expression = "Step 3: 3y = 1.05, so y = 0.35, so the fruit roll-up was 35 cents.";
+        break;
+      case 3:
+        four_math_expression = "Step 4: Plug y into the first equation. 3x + 1.4 = 2.84.";
+        break;
+      case 4:
+        four_math_expression = "Step 5: We get 3x = 1.44. The candy bars cost 48 cents (1.44/3).";
+        break;
+    }
+    document.getElementById("example_four").innerHTML = four_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+    function exampleFourPrevClick() {
+    if (four_clicks <= 0) {
+      four_clicks = 1;
+    }
+    four_clicks = (four_clicks - 1) % 5;
+    switch (parseInt(four_clicks)) {
+    case 0:
+        four_math_expression = "Step 1: Subtract 3x and 3x to cancel x.";
+        break;
+      case 1:
+        four_math_expression = "Step 2: Subtract 4y and y to get 3y and subtract 2.84 and 1.79 to get 1.05";
+        break;
+      case 2:
+        four_math_expression = "Step 3: 3y = 1.05, so y = 0.35, so the fruit roll-up was 35 cents.";
+        break;
+      case 3:
+        four_math_expression = "Step 4: Plug y into the first equation. 3x + 1.4 = 2.84.";
+        break;
+      case 4:
+        four_math_expression = "Step 5: We get 3x = 1.44. The candy bars cost 48 cents (1.44/3).";
+        break;
+    }
+    document.getElementById("example_four").innerHTML = four_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+
+
+</script>
+<!-- --  JavaScript End ---->
+</head>
+<p>The following interactive examples will help you step through manipulation, graphing, substitution, and elimination methods for solving systems of equations. Please proceed through the four examples and then complete the quiz for this module. 
+  <a href="https://www.mathsisfun.com/algebra/systems-linear-equations.html" target="_blank" rel="noopener">
+    <strong>You can review a basic definition of systems of equations and more examples via this free resource.</strong>
+  </a>
+</p>
+<h2>
+  <strong>Example 1: You are given the following system of equations:
+  <ul>
+  <li>2y = x + 7</li>
+  <li>x = y - 4</li>
+  </ul>
+  <strong>First, let's start with simple manipulation for 2y = x + 7 for practice's sake. Express x in terms of y. 
+
+  <h3>
+    <strong>Simple subtraction to express x in terms of y:</strong>
+    <ul>
+      <li>Step 1: Subtract 7 from both sides to give 2y - 7 = x.</li>
+      <li>Result: x = 2y - 7.</li>
+    </ul>
+   <strong>Now, let's solve for x and y using substitution:</strong>
+   <ul>
+    <li>You can click the button below to reveal the next step.</li>
+  </ul>
+  <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_one"></p>
+  <p style="padding-left: 40px;">
+    <button type="button" onclick="exampleOnePrevClick()">Prev step </button>
+    <button type="button" onclick="exampleOneOnClick()">Next step</button>
+  </p>
+    <ul>
+      <li>Step 1: Take the second equation (which already expressed x in terms of y) and sub out the x in our rearrangement of this first equation.</li>
+      <li>Step 2: We get 2y - 7 = y - 4. Let us consolidate our terms a bit.</li>
+      <li>Step 3: We can move - 7 to the other side to give us 2y = y - 4 + 7.</li>
+      <li>Step 4: We can move y from the right to the left side to give 2y - y  = -4 + 7.</li>
+      <li>Step 5: Now we have y = -4 + 7. We can simplify further to solve y: y = 3.</li>
+    </ul>
+   <strong>Now we can substitute our y value in either equation to solve x:</strong>
+    <ul>
+      <li>Step 1: We get x = 2(3) - 7.</li>
+      <li>Step 2: Which is x = 6 - 7.</li>
+      <li>Step 3: So, y = 3 and x = 1 or (-1, 3). Let's check our work by graphing the original equations and examining the point of intersection between those two lines.</li>
+    </ul>
+  <iframe src="https://www.desmos.com/calculator/hw9e3ja7pl?embed" width="500" height="500" style="border: 1px solid #ccc" frameborder=0></iframe>
+    <BR>
+    <h2>
+      <strong>Example 2: Let's do one more substitution example before trying a couple of elimination examples. Solve the following:</strong>
+      <ul>
+          <li>y = 4x - 17.5</li>
+          <li>y + 2x = 6.5</li>
+     </ul>
+  <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_two"></p>
+      <p style="padding-left: 40px;">
+        <button type="button" onclick="exampleTwoPrevClick()">Prev step </button>
+        <button type="button" onclick="exampleTwoOnClick()">Next step</button>
+      </p>
+      <h3>
+        <strong>Solution - Part 1:</strong>
+        <ul>
+          <li>Step 1: Plug the first equation into y of the second to get 4x - 17.5 + 2x = 6.5</li>
+          <li>Step 2: Add 17.5 to both sides to get 6x = 24.</li>
+          <li>Step 3: Divide both sides by 6 to get x = 4.</li>
+        </ul>
+        <strong>Solution - Part 2:</strong>
+        <ul>
+          <li>Step 1: Plug x into y of either equation and solve for y. We get 4(4) - 17.5.</li>
+          <li>Step 2: We get y = 16 - 16.5.</li>
+          <li>Step 3: x - 4 and y = -0.5 or (4, -0.5).</li>
+          <li><a href = "https://www.desmos.com/calculator" target="_blank" rel="noopener">Step 4: Graph it to check your work!</a></li>
+        </ul>
+        <BR>
+        <h2>
+          <strong>Example 3: Let's try two final examples focused on using elimination to solve a system of equations.</strong>
+ 
+    <ul>  
+          <li>Solve for x and y by eliminating common terms:</li>
+          <li>3x + 4y = 2.5</li>
+          <li>5x - 4y = 25.5</li>
+     </ul>
+    <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_three"></p>
+              <p style="padding-left: 40px;">
+                <button type="button" onclick="exampleThreePrevClick()">Prev step </button>
+                <button type="button" onclick="exampleThreeOnClick()">Next step</button>
+  </p>   
+   <strong>Solution - Part 1:</strong>
+            <ul>
+              <li>Question: What would happen if we just added the two equations together?</li>
+              <li>3x + 4y = 2.5  - add 3x and 5x </li>
+              <li>5x - 4y = 25.5 - add -4y to 4y and add the float terms on the right.</li>
+              <li>---------------</li>
+              <li>8x = 28</li>
+              <li>x = 28/8 or 3.5</li>
+            </ul>
+
+  <strong>Solution - Part 2</strong>
+            <ul>
+              <li>Plug 3.5 into the first equation to get y.
+              <li>3x(3.5) + 4y = 2.5</li>
+              <li>10.5 + 4y = 2.5.</li>
+              <li>4y = 2.5 - 10.5</li>
+              <li>4y = -8, so y = -2</li>
+            </ul>    
+            <BR>
+            <h2>
+              <strong>Example 4: One final elimination problem. Let's make it more of a real-world problem.</strong>
+              <p>Ricky and Jay buy some candy. Ricky buys 3 candy bars and 4 fruit roll-ups for $2.84. Jay buys 3 candy bars but just 1 fruit roll-up for $1.79. 
+                 What is the cost of the candy bar and what is the cost of the fruit roll-up?
+                 Let the candy bar be x and the fruit roll-up be y. What is our system of equations?</p>            
+  <strong>Our system of equations: note the common terms, which make it a good candidate for the elimination method.</strong>
+                <ul>
+                  <li>3x + 4y = 2.84</li>
+                  <li>3x + y = 1.79</li> 
+  </ul>
+  <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_four"></p>
+              <p style="padding-left: 40px;">
+                <button type="button" onclick="exampleFourPrevClick()">Prev step </button>
+                <button type="button" onclick="exampleFourOnClick()">Next step</button>
+              </p>
+              <h2>
+                <strong>Solution - Part 1:</strong>
+                <ul>
+                  <li>Step 1: Subtract 3x and 3x to cancel x.</li>
+                  <li>Step 2: Subtract 4y and y to get 3y.</li>
+                  <li>Step 3: Subtract 2.84 and 1.79 to get 1.05</li>
+                  <li>Step 4: 3y = 1.05, so y = 0.35</li>
+                  <li>The fruit roll-up cost 35 cents.</li>
+                </ul>
+  <BR>
+                <strong>Solution - Part 2:</strong>
+                <ul>
+                  <li>Step 1: Plug y into the first equation.</li>
+                  <li>Step 2: 3x + 1.4 = 2.84.</li>
+                  <li>Step 3: We get 3x = 2.84 - 1.4.</li>
+                  <li>Step 4: 3x = 1.44.</li>
+                  <li>The candy bar cost 48 cents or x = 0.48.</li>
+                </ul>
+                <BR>

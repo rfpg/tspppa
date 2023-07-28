@@ -1,0 +1,212 @@
+<head>
+  <title>Module 3: Interactive Examples - Exponent Properties</title>
+<style>
+  p, li, ul, ol *
+{
+   font-size: 1em !important;
+   font-weight: normal !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+
+h2, h3, h4 *
+{
+   font-size: 1em !important;
+   font-weight: bold !important;
+   color: #000 !important;
+   font-family: Arial !important;
+}
+</style>
+
+<script type="text/javascript">
+  function changeText(text) {
+    var display = document.getElementById('text-display');
+    display.innerHTML = "";
+    display.innerHTML = text;
+  }
+
+  function changeback(text) {
+    var display = document.getElementById('text-display');
+    display.innerHTML = "";
+    display.innerHTML = text;
+  }
+  var one_clicks = -1;
+  var one_math_expression;
+
+  function exampleOneOnClick() {
+    if (one_clicks <= 0) {
+      one_clicks = 0;
+    }
+    one_clicks = (one_clicks + 1) % 4;
+    switch (parseInt(one_clicks)) {
+      case 0:
+        one_math_expression = "Click to cycle through operational steps for simplifying the following expression: (2<sup>3</sup>) x (2<sup>5</sup>) x (2<sup>2</sup>).";
+        break;
+      case 1:
+        one_math_expression = "Step 1: First, we add the powers with the same base. 2<sup>3</sup> x 2<sup>5</sup> x 2<sup>2</sup>.";
+        break;
+      case 2:
+        one_math_expression = "Step 2: 2<sup>(3 + 5 + 2)</sup>  (add exponents with the same base).";
+        break;
+      case 3:
+        one_math_expression = "Result: The simplification using the powers rule is 2<sup>10</sup>.";
+        break;  
+  }
+    document.getElementById("example_one").innerHTML = one_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleOnePrevClick() {
+    if (one_clicks <= 0) {
+      one_clicks = 1;
+    }
+    one_clicks = (one_clicks - 1) % 4;
+    switch (parseInt(one_clicks)) {
+      case 0:
+        one_math_expression = "Click to cycle through operational steps for simplifying the following expression: (2<sup>3</sup>) x (2<sup>5</sup>) x (2<sup>2</sup>).";
+        break;
+      case 1:
+        one_math_expression = "Step 1: First, we add the powers with the same base. 2<sup>3</sup> x 2<sup>5</sup> x 2<sup>2</sup>.";
+        break;
+      case 2:
+        one_math_expression = "Step 2: 2<sup>(3 + 5 + 2)</sup>  (add exponents with the same base).";
+        break;
+      case 3:
+        one_math_expression = "Result: The simplification using the powers rule is 2<sup>10</sup>.";
+        break;  
+    }
+    document.getElementById("example_one").innerHTML = one_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  var two_clicks = -1;
+  var two_math_expression;
+
+  function exampleTwoOnClick() {
+    two_clicks = (two_clicks + 1) % 3;
+    switch (parseInt(two_clicks)) {
+      case 0:
+        two_math_expression = "Click to cycle through operational steps for simplifying the following expression: (8<sup>5</sup>) / (8<sup>3</sup>).";
+        break;
+      case 1:
+        two_math_expression = "Step 1: 8<sup>(5-3)</sup>  (when dividing exponents with the same base, we can simplify by subtracting the exponents from one another).";
+        break;
+      case 2:
+        two_math_expression = "Result: The full simplified expression is: (8<sup>5</sup>) / (8<sup>3</sup>) = 8<sup>2</sup>.";
+        break;
+    }
+    document.getElementById("example_two").innerHTML = two_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+
+  function exampleTwoPrevClick() {
+    if (two_clicks <= 0) {
+      two_clicks = 1;
+    }
+    two_clicks = (two_clicks - 1) % 3;
+    switch (parseInt(two_clicks)) {
+       case 0:
+        two_math_expression = "Click to cycle through operational steps for simplifying the following expression: (8<sup>5</sup>) / (8<sup>3</sup>).";
+        break;
+      case 1:
+        two_math_expression = "Step 1: 8<sup>(5-3)</sup>   (when dividing exponents with the same base, we can simplify by subtracting the exponents from one another).";
+        break;
+      case 2:
+        two_math_expression = "Step 2: The full simplified expression is: (8<sup>5</sup>) / (8<sup>3</sup>) = 8<sup>2</sup>.";
+        break;
+    }
+    document.getElementById("example_two").innerHTML = two_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  var three_clicks = -1;
+  var three_math_expression;
+
+  function exampleThreePrevClick() {
+    three_clicks = (three_clicks + 1) % 2;
+    switch (parseInt(three_clicks)) {
+      case 0:
+        three_math_expression = "The answer is (2<sup>3</sup>)<sup>4</sup> = 2<sup>(3x4)</sup> = 2<sup>12</sup>.";
+        break;
+    }
+    document.getElementById("example_three").innerHTML = three_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+  var four_clicks = -1;
+  var four_math_expression;
+
+  function exampleFourPrevClick() {
+    four_clicks = (four_clicks + 1) % 1;
+    switch (parseInt(four_clicks)) {
+      case 0:
+        four_math_expression = "The answer is always 1. Any number raised to the power of 0 is 1.";
+        break;
+    }
+    document.getElementById("example_four").innerHTML = four_math_expression;
+    //document.getElementById("clicks").innerHTML = clicks
+  }
+</script>
+</head>
+<!-- --  JavaScript End ---->
+<h2>Exponent Properties <p>Exponent properties are fundamental concepts in mathematics that allow us to simplify and manipulate expressions involving exponents. Exponents, also known as powers or indices, are used to represent the repeated multiplication of a number by itself. These properties provide a set of rules and relationships that govern the behavior of exponents, making calculations and problem-solving more efficient and manageable. </p>
+  <p>Proceed through the following interactive examples by reading and following the instructive text. Then, once you're done, complete the quiz for this lesson to gauge your developing knowledge.</p>
+  <h3>
+    <BR>
+    <h2>
+      <strong>Example 1: Let's start with a simple example for Product of Powers (where we add powers that have the same base).</strong>
+      <ul>
+        <li>(2<sup>3</sup>) x (2<sup>5</sup>) x (2<sup>2</sup>) = ?</li>
+        <li>You can click on the button below to reveal each simplification step and an explanation.</li>
+      </ul>
+      <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_one"></p>
+      <p style="padding-left: 40px;">
+        <button type="button" onclick="exampleOnePrevClick()">Prev step </button>
+        <button type="button" onclick="exampleOneOnClick()">Next step</button>
+      </p>
+      <ul>
+        <h3>
+          <strong>Solution:</strong>
+      </ul>
+      <ul>
+        <li>Step 1: 2<sup>3</sup> x 2<sup>5</sup> x 2<sup>2</sup></li>
+        <li>Step 2: 2<sup>(3 + 5 + 2)</sup> (add exponents with the same base)</li>
+        <li>Step 3: 2<sup>10</sup> is our answer!</li>
+      </ul>
+      <BR>
+      <h2>
+        <strong>Example 2: Now, let's apply what we've learned to a Quotient of Powers example (where dividing two numbers with the same base, the exponents can be subtracted).</strong>
+        <ul>
+          <li>(8<sup>5</sup>) / (8<sup>3</sup>) = ? </li>
+          <li>You can click on the button below to reveal each simplification step and an explanation.</li>
+        </ul>
+        <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_two"></p>
+        <p style="padding-left: 40px;">
+          <button type="button" onclick="exampleTwoPrevClick()">Prev step </button>
+          <button type="button" onclick="exampleTwoOnClick()">Next step</button>
+        </p>
+        <h3>
+          <strong>Solution:</strong>
+          <ul>
+            <li>Step 1: 8<sup>(5-3)</sup>   (when dividing exponents with the same base, we can simplify by subtracting the exponents from one another).</li>
+            <li>Step 2: So, the full simplified expression is: (8<sup>5</sup>) / (8<sup>3</sup>) = 8<sup>2</sup> </li>
+          </ul>
+          <BR>
+          <h2>
+            <strong>Example 3: Do you recall what to do when raising a power to a power? (2<sup>3</sup>)<sup>4</sup>
+            <ul>
+            <li>What can we do with the exponents in (2<sup>3</sup>)<sup>4</sup>?</li>
+            </ul>
+              <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_three"></p>
+              <p style="padding-left: 40px;">
+                <button type="button" onclick="exampleThreePrevClick()">Reveal the answer! </button>
+              </p>
+  
+              <BR>
+              <h2>
+            <strong>Example 4: Any number raised to the power of 1 is itself. How about when we raise something to 0?</strong>
+                <ul>
+                  <li>For example, 5<sup>0</sup> = ?</li>
+                </ul>
+                <p style="padding-left: 40px; font-family: Garamond, sans-serif; font-size: 20px;" id="example_four"></p>
+                <p style="padding-left: 40px;">
+                  <button type="button" onclick="exampleFourPrevClick()">Reveal the answer! </button>
+                </p>
+                <BR>
